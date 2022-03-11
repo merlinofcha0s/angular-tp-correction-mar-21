@@ -5,9 +5,12 @@
       <h3>{{ vinyl.title }}<br><small>par {{vinyl.artist}}</small></h3>
     </div>
     <div class="card-text">
-      <h5 class="bold">{{vinyl.releaseDate}}</h5></div>
+      <h5 class="bold">{{vinyl.releaseDate}}</h5>
+    </div>
+    <app-counting-buttons [releaseDate]="vinyl.releaseDate!"
+                          (releaseDateChanges)="changeReleaseDate($event)"></app-counting-buttons>
     <div class="d-flex flex-column justify-content-center">
-      <button class="btn btn-primary mt-2">Modifier</button>
+      <button (click)="onModify()" class="btn btn-primary mt-2">Modifier</button>
     </div>
   </div>
 </div>

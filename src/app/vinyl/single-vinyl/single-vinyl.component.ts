@@ -11,9 +11,17 @@ export class SingleVinylComponent implements OnInit {
   @Input()
   public vinyl: Vinyl = {};
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  public onModify(): void {
+    this.vinyl.artist = 'King of pop';
+  }
+
+  public changeReleaseDate(releaseDateUpdated: number): void {
+    this.vinyl.releaseDate = releaseDateUpdated;
+  }
 }

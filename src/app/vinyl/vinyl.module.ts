@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SingleVinylComponent } from './single-vinyl/single-vinyl.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 
@@ -12,7 +13,8 @@ import { SingleVinylComponent } from './single-vinyl/single-vinyl.component';
     SingleVinylComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class VinylModule { }
