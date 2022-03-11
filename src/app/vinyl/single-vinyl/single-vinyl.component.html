@@ -7,8 +7,11 @@
     <div class="card-text">
       <h5 class="bold">{{vinyl.releaseDate}}</h5>
     </div>
-    <app-counting-buttons [releaseDate]="vinyl.releaseDate!"
-                          (releaseDateChanges)="changeReleaseDate($event)"></app-counting-buttons>
+    <div *ngIf="isEditing">
+      <app-counting-buttons [releaseDate]="vinyl.releaseDate!"
+                            (releaseDateChanges)="changeReleaseDate($event)">
+      </app-counting-buttons>
+    </div>
     <div class="d-flex flex-column justify-content-center">
       <button (click)="onModify()" class="btn btn-primary mt-2">Modifier</button>
     </div>

@@ -7,7 +7,9 @@
   <div class="row">
     <div class="col-12">
       <div class="d-flex flex-wrap justify-content-between">
-        <app-single-vinyl [vinyl]="mjVinyl"></app-single-vinyl>
+        <div *ngFor="let vinyl of vinyls">
+          <app-single-vinyl [vinyl]="vinyl"></app-single-vinyl>
+        </div>
       </div>
     </div>
   </div>
