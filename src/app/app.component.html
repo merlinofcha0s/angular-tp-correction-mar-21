@@ -13,4 +13,14 @@
       </div>
     </div>
   </div>
+  <h3>User MGT</h3>
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex flex-wrap justify-content-between">
+        <div *ngFor="let user of users">
+          <app-single-user [user]="user"></app-single-user>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
