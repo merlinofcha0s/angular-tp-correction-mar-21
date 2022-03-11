@@ -1,16 +1,16 @@
-<div class="card" style="width: 300px;">
+<div class="card" style="width: 300px;" [class.red]="isEditing">
   <img class="w-100" [src]="vinyl.imageUrl" alt="Album photo of {{vinyl.title}}">
   <div class="card-body">
     <div class="card-title">
       <h3>{{ vinyl.title }}<br><small>par {{vinyl.artist}}</small></h3>
     </div>
     <div class="card-text">
-      <h5 class="bold">{{vinyl.releaseDate}}</h5>
+      <h5 class="bold">{{vinyl.releaseDate | date: 'mediumDate'}}</h5>
     </div>
     <div *ngIf="isEditing">
-      <app-counting-buttons [releaseDate]="vinyl.releaseDate!"
-                            (releaseDateChanges)="changeReleaseDate($event)">
-      </app-counting-buttons>
+<!--      <app-counting-buttons [releaseDate]="vinyl.releaseDate!"-->
+<!--                            (releaseDateChanges)="changeReleaseDate($event)">-->
+<!--      </app-counting-buttons>-->
     </div>
     <div class="d-flex flex-column justify-content-center">
       <button (click)="onModify()" class="btn btn-primary mt-2">Modifier</button>

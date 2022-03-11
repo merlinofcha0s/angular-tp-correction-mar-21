@@ -24,7 +24,7 @@ export class SingleVinylComponent implements OnInit {
     this.isEditing = !this.isEditing;
   }
 
-  public changeReleaseDate(releaseDateUpdated: number): void {
+  public changeReleaseDate(releaseDateUpdated: Date): void {
     this.vinyl.releaseDate = releaseDateUpdated;
   }
 }
