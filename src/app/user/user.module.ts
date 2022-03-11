@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SingleUserComponent } from './single-user/single-user.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -9,7 +10,8 @@ import { SingleUserComponent } from './single-user/single-user.component';
     SingleUserComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     SingleUserComponent

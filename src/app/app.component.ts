@@ -17,6 +17,9 @@ export class AppComponent {
 
   constructor(private vinylService: VinylService, private userService: UserService) {
     this.vinyls = this.vinylService.getAll();
-    this.users = this.userService.getAll();
+    this.userService.getAll()
+      .subscribe(users => {
+        this.users = users;
+      });
   }
 }
