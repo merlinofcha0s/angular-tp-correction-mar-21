@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SingleUserComponent } from './single-user/single-user.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ListUserComponent } from './list-user/list-user.component';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -13,10 +14,12 @@ import { ListUserComponent } from './list-user/list-user.component';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
-    ListUserComponent
+    ListUserComponent,
+
   ]
 })
 export class UserModule { }

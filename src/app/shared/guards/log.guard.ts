@@ -14,8 +14,7 @@ export class LogGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log('access denied');
-    return false;
+    return true;
   }
 
 }
