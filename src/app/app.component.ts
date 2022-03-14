@@ -14,17 +14,8 @@ import {HttpResponse} from "@angular/common/http";
 export class AppComponent {
   title = 'toto';
 
-  vinyls: Array<Vinyl> = [];
-  users: Observable<Array<User> | null>;
+  vinylUrl = '/vinyls';
 
-  errorCallUser = false;
-
-  constructor(private vinylService: VinylService, private userService: UserService) {
-    this.vinyls = this.vinylService.getAll();
-    this.users = this.userService.getAll().pipe(
-      filter(httpResponse => httpResponse.ok),
-      map(httpResponse => httpResponse.body),
-      // map(httpResponse => {throw new Error()})
-    );
+  constructor() {
   }
 }
