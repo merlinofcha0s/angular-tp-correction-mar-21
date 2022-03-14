@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Vinyl} from "./vinyl.model";
+import {Vinyl} from "../vinyl.model";
 
 @Component({
   selector: 'app-single-vinyl',

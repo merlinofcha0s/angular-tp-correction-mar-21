@@ -19,7 +19,7 @@
       <div class="d-flex flex-wrap justify-content-between">
         <div *ngIf="errorCallUser; else userBlock">Erreur de chargement des données utilisateurs</div>
         <ng-template #userBlock>
-          <div *ngFor="let user of users">
+          <div *ngFor="let user of users | async">
             <app-single-user [user]="user"></app-single-user>
           </div>
         </ng-template>
