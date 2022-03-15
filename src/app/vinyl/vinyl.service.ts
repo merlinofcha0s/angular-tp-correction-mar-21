@@ -45,7 +45,14 @@ export class VinylService {
   }
 
   public save(vinyl: Vinyl): Vinyl {
+    vinyl.id = this.vinyls.length;
     this.vinyls.push(vinyl);
+    return vinyl;
+  }
+
+  public update(vinyl: Vinyl): Vinyl {
+    const vinylsFiltered = this.vinyls.filter(vinyl => vinyl.id == vinyl.id);
+    vinylsFiltered[0] = vinyl;
     return vinyl;
   }
 

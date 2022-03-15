@@ -13,6 +13,8 @@ export class EditVinylComponent implements OnInit {
 
   vinyl: Vinyl = {};
 
+  edit = false;
+
   // Etape 1 : On recupere l'id via l'URL
   // Etape 2 : On passe l'id au service de vinyl pour recuperer le vinyl correspondant
   // Etape 3 : on assigne le vinyl qui provient du service au vinyl present dans le composant
@@ -27,12 +29,18 @@ export class EditVinylComponent implements OnInit {
       filter(params => params['id'] !== undefined),
       map(params => params['id'])
     ).subscribe(id => {
+      this.edit = true;
       this.vinyl = this.vinylService.getOneById(id);
     });
   }
 
   saveVinyl(): void {
-    this.vinylService.save(this.vinyl);
+    if (this.edit) {
+      this.vinylService.update(this.vinyl);
+    } else {
+      this.vinylService.save(this.vinyl);
+    }
+
     this.router.navigate(['vinyls']);
   }
 }
