@@ -44,4 +44,9 @@ export class VinylService {
     return this.vinyls;
   }
 
+  public save(vinyl: Vinyl): Vinyl {
+    this.vinyls.push(vinyl);
+    return vinyl;
+  }
+
 }

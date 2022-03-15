@@ -1,11 +1,33 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-12 col-lg-6">
     <form (ngSubmit)="saveVinyl()" #vinylForm="ngForm">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title" [ngModel]="vinyl.title" required email #title="ngModel"
+      <div class="form-group mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" name="title" [(ngModel)]="vinyl.title" required #title="ngModel"
                class="form-control" placeholder="Enter title"/>
       </div>
+      <div *ngIf="title.dirty && title.hasError('required')">
+        Un titre est obligatoire
+      </div>
+      <div class="form-group mb-3">
+        <label for="artist" class="form-label">Artiste</label>
+        <input type="text" id="artist" name="artist" [(ngModel)]="vinyl.artist" #artist="ngModel"
+               class="form-control" placeholder="Enter artist"/>
+      </div>
+      <div class="form-group mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="text" id="image" name="image" [(ngModel)]="vinyl.imageUrl" #image="ngModel"
+               class="form-control" placeholder="Enter image URL"/>
+      </div>
+      <div class="form-group mb-3">
+        <label for="releaseDate" class="form-label">Release Date</label>
+        <input type="date" id="releaseDate" name="releaseDate" [(ngModel)]="vinyl.releaseDate" #releaseDate="ngModel"
+               class="form-control" placeholder="Enter release date"/>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="vinylForm.invalid">Valider</button>
     </form>
+  </div>
+  <div class="col-12 col-lg-6">
+    <app-single-vinyl [vinyl]="vinyl"></app-single-vinyl>
   </div>
 </div>

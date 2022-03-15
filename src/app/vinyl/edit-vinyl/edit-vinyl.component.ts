@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Vinyl} from "../vinyl.model";
+import {VinylService} from "../vinyl.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit-vinyl',
@@ -10,7 +12,7 @@ export class EditVinylComponent implements OnInit {
 
   vinyl: Vinyl = {};
 
-  constructor() {
+  constructor(private vinylService: VinylService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -18,6 +20,7 @@ export class EditVinylComponent implements OnInit {
 
 
   saveVinyl(): void {
-
+    this.vinylService.save(this.vinyl);
+    this.router.navigate(['vinyls']);
   }
 }
