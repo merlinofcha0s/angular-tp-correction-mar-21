@@ -16,4 +16,12 @@ export class UserService {
   public getAll(): Observable<HttpResponse<Array<User>>> {
     return this.http.get<Array<User>>(`${this.baseUrl}/users`, {observe: "response"});
   }
+
+  public getById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/users/${id}`);
+  }
+
+  public save(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/users`, user);
+  }
 }

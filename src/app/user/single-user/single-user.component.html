@@ -14,5 +14,5 @@
   <div class="section" style="text-align: center">
     <a href="http://{{user.website}}" target="_blank">{{ user.website }}</a>
   </div>
-  <button class="btn btn-primary mt-2">Modifier</button>
+  <button class="btn btn-primary mt-2" [routerLink]="['edit', user.id]">Modifier</button>
 </div>

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../user.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-single-user',
@@ -15,5 +16,4 @@ export class SingleUserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

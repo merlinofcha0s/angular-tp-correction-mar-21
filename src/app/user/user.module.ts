@@ -4,23 +4,22 @@ import { SingleUserComponent } from './single-user/single-user.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ListUserComponent } from './list-user/list-user.component';
 import {RouterModule} from "@angular/router";
+import { EditUserComponent } from './edit-user/edit-user.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
 @NgModule({
   declarations: [
     SingleUserComponent,
-    ListUserComponent
+    ListUserComponent,
+    EditUserComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
-  ],
-  exports: [
-    ListUserComponent,
-    SingleUserComponent,
-
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }
