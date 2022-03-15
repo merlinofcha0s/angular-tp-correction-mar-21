@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Vinyl} from "../vinyl.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-single-vinyl',
@@ -13,7 +14,7 @@ export class SingleVinylComponent implements OnInit {
 
   public isEditing = false;
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -21,7 +22,7 @@ export class SingleVinylComponent implements OnInit {
   }
 
   public onModify(): void {
-    this.isEditing = !this.isEditing;
+    this.router.navigate(['vinyls', 'edit', this.vinyl.id]);
   }
 
   public changeReleaseDate(releaseDateUpdated: Date): void {

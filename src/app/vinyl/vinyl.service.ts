@@ -49,4 +49,8 @@ export class VinylService {
     return vinyl;
   }
 
+  getOneById(id: number): Vinyl {
+    const vinylsFiltered = this.vinyls.filter(vinyl => vinyl.id == id);
+    return vinylsFiltered[0];
+  }
 }

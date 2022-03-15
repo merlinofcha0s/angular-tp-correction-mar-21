@@ -23,4 +23,8 @@ export const ROUTES: Routes = [
     path: 'vinyls/add',
     component: EditVinylComponent
   },
+  {
+    path: 'vinyls/edit/:id',
+    component: EditVinylComponent
+  },
 ]
